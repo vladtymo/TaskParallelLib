@@ -15,6 +15,8 @@ namespace _04_Task_Result
 
             ////////////////// Factorial
             Task<int> task1 = new Task<int>(() => Factorial(5));
+            task1.ContinueWith(Summ);
+
             task1.Start();
 
             //task1.Wait();
@@ -55,6 +57,12 @@ namespace _04_Task_Result
             }
 
             return result;
+        }
+        static int Summ(Task<int> prevTask)
+        {
+            int summ = prevTask.Result + prevTask.Result;
+            Console.WriteLine(summ);
+            return summ;
         }
     }
 

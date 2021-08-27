@@ -17,12 +17,12 @@ namespace _04_Continuous_Tasks
             });
 
             // задача продолжения
-            Task task2 = task1.ContinueWith(Display);
+            task1.ContinueWith(Display).ContinueWith(Display2);
 
             task1.Start();
 
             // ждем окончания второй задачи
-            task2.Wait();
+            //task2.Wait();
             Console.WriteLine("Main is working...");
             Console.ReadLine();
         }
@@ -32,6 +32,10 @@ namespace _04_Continuous_Tasks
             Console.WriteLine($"Task Id: {Task.CurrentId}");
             Console.WriteLine($"Previous Task Id: {prevTask.Id}");
             Thread.Sleep(3000);
+        }
+        static void Display2(Task prevTask)
+        {
+            Console.WriteLine("Display 2");
         }
     }
 }

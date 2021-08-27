@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.779
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31605.320
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01_Task", "01_Task\01_Task.csproj", "{12CCE185-EF47-4066-8083-CD85F7F602C4}"
 EndProject
@@ -28,6 +28,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "12_CancelationToken", "12_CancelationToken\12_CancelationToken.csproj", "{B6B6DB96-072F-4CC9-B30C-B75E16702209}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "04_Continuous_Tasks", "04_Continuous_Tasks\04_Continuous_Tasks.csproj", "{619CEA0E-B2A2-48B1-914A-B7CE9424525A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "13_Task_Scheduler", "13_Task_Scheduler\13_Task_Scheduler.csproj", "{8A28CFEB-E65B-4806-B08F-C19EC2F330CA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -87,6 +89,10 @@ Global
 		{619CEA0E-B2A2-48B1-914A-B7CE9424525A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{619CEA0E-B2A2-48B1-914A-B7CE9424525A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{619CEA0E-B2A2-48B1-914A-B7CE9424525A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8A28CFEB-E65B-4806-B08F-C19EC2F330CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8A28CFEB-E65B-4806-B08F-C19EC2F330CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8A28CFEB-E65B-4806-B08F-C19EC2F330CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8A28CFEB-E65B-4806-B08F-C19EC2F330CA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

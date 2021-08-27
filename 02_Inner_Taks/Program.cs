@@ -14,6 +14,7 @@ namespace _02_Inner_Taks
             var outer = Task.Factory.StartNew(() =>      // outer task
             {
                 Console.WriteLine("Outer task starting...");
+
                 var inner = Task.Factory.StartNew(() =>  // inner task
                 {
                     Console.WriteLine("Inner task starting...");

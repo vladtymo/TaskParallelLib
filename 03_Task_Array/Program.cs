@@ -28,7 +28,7 @@ namespace _03_Task_Array
 
             int j = 1;
             for (int i = 0; i < tasks2.Length; i++)
-                tasks2[tasks2.Length - i - 1] = Task.Run(() => 
+                tasks2[i] = Task.Run(() => 
                 {
                     Thread.Sleep(rnd.Next(5000));
                     Console.WriteLine($"Task {j++}"); 
