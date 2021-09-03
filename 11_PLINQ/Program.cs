@@ -13,7 +13,7 @@ namespace _11_PLINQ
         {
             int[] numbers = new int[] { -2, -1, 0, 1, 2, 3, 4, 5, 6, 7, 8, };
 
-            //var factorials = from n in numbers.AsParallel().AsOrdered()
+            //var factorials = from n in numbers.AsParallel()
             //                 where n > 0
             //                 //orderby n
             //                 select Factorial(n);
@@ -37,13 +37,20 @@ namespace _11_PLINQ
             watch.Stop();
             Console.WriteLine($"Execution Time: {watch.ElapsedMilliseconds} ms\n");
 
-            foreach (var n in query)
-                Console.WriteLine("\t\t" + n);
+            //foreach (var n in query)
+            //    Console.WriteLine("\t\t" + n);
 
             Console.Read();
         }
         static int Factorial(int x)
         {
+            //Random r = new Random();
+            //for (int i = 0; i < 10_000_000; i++)
+            //{
+            //    r.Next();
+            //    r.GetHashCode();
+            //    r.NextDouble();
+            //}
             int result = 1;
 
             for (int i = 1; i <= x; i++)

@@ -29,9 +29,9 @@ namespace _07_Parallel_ForEach
         }
         static void Main(string[] args)
         {
-            //var list = new List<int>() { 1, 3, 5, 8 };
+            var list = new List<int>() { 1, 3, 5, 8 };
 
-            //Parallel.ForEach(list, Factorial);
+            Parallel.ForEach(list, Factorial);
 
             List<Author> authors = new List<Author>()
             {
@@ -42,7 +42,8 @@ namespace _07_Parallel_ForEach
                 new Author("Roberto"),
                 new Author("Harry"),
                 new Author("Roberto"),
-                new Author("Harry")
+                new Author("William"),
+                new Author("Roberto"),
             };
 
             //Parallel.ForEach(authors, AverageRating);

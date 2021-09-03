@@ -1,19 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.IO;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using PropertyChanged;
+using Microsoft.WindowsAPICodePack.Dialogs;
+using System.Threading.Tasks;
 
 namespace _14_async_await
 {
@@ -22,47 +12,102 @@ namespace _14_async_await
     /// </summary>
     public partial class MainWindow : Window
     {
-        ViewModel viewModel = new ViewModel();
+        ViewModel model = new ViewModel();
         public MainWindow()
         {
             InitializeComponent();
-
-            this.DataContext = viewModel;
+            this.DataContext = model;
         }
 
-        private Task<int> HardWorkAsync(long count)
+        private async void GetDirectorySize(string path)
+        {
+            if (!Directory.Exists(path))
+            {
+                MessageBox.Show("Selected directory is not exists!");
+                return;
+            }
+
+            try
+            {
+                //long sum = dir.GetFiles("*", SearchOption.TopDirectoryOnly).Sum(f => f.Length);
+                long sum = await GetTotalSize(path);
+                MessageBox.Show("Directory Size: " + Utils.BytesToReadableFormat(sum));
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private Task<long> GetTotalSize(string root)
+        {
+            return Task.Run(() =>
+            {
+                long sum = 0;
+                try
+                {
+                    DirectoryInfo dir = new DirectoryInfo(root);
+
+                    foreach (var f in dir.GetFiles())
+                    {
+                        sum += f.Length;
+                    }
+                    foreach (var d in dir.GetDirectories())
+                    {
+                        sum += GetTotalSize(d.FullName).Result;
+                    }
+                    return sum;
+                }
+                catch
+                {
+                    return sum;
+                }
+            });
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            using (var dialog = new CommonOpenFileDialog())
+            {
+                dialog.IsFolderPicker = true;
+                if (dialog.ShowDialog() == CommonFileDialogResult.Ok)
+                {
+                    model.SelectedDirPath = dialog.FileName;
+                }
+            }
+        }
+
+        private async void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            GetDirectorySize(model.SelectedDirPath);
+            //await HardWorkAsync(100_000);
+            MessageBox.Show("Continue...");
+        }
+
+        private Task HardWorkAsync(int count)
         {
             return Task.Run(() =>
             {
                 int num = 0;
-                var random = new Random();
+                Random rand = new Random();
                 for (int i = 0; i < count; i++)
                 {
-                    num = random.Next();
-                    App.Current.Dispatcher.Invoke((Action)delegate
+                    num = rand.Next();
+                    App.Current.Dispatcher.Invoke((Action)delegate ()
                     {
                         list.Items.Add(num);
                     });
-                    viewModel.Progress = (int)((double)i / count * 100.0);
+                    model.Progress = (int)((double)i / count * 100.0);
                 }
-                return num;
             });
         }
-
-        private async void Button_Click(object sender, RoutedEventArgs e)
-        {
-            long count = 100_000L;
-
-            int result = await HardWorkAsync(count);
-            MessageBox.Show($"Done! Result: {result}");
-        }
-
-
     }
 
     [AddINotifyPropertyChangedInterface]
     public class ViewModel
     {
+        public string SelectedDirPath { get; set; }
+        public string TotalSize { get; set; }
         public int Progress { get; set; }
     }
 }
