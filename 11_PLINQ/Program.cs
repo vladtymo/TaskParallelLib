@@ -20,14 +20,14 @@ namespace _11_PLINQ
 
             var factorials = numbers.AsParallel()
                                     .AsOrdered()
-                                    .Where(n => n > 0)
-                                    .Select(n => Factorial(n));
+                                    .Where(n => n > 0);
+                                    //.Select(n => Factorial(n));
 
             //var query = from n in factorials.AsUnordered()
             //            where n > 100
             //            select n;
 
-            var query = factorials.AsUnordered().Where(n => n > 100);
+            //var query = factorials.AsUnordered().Where(n => n > 100);
 
             var watch = System.Diagnostics.Stopwatch.StartNew();
 
@@ -53,10 +53,10 @@ namespace _11_PLINQ
             //}
             int result = 1;
 
-            for (int i = 1; i <= x; i++)
-            {
-                result *= i;
-            }
+            //for (int i = 1; i <= x; i++)
+            //{
+            //    result *= i;
+            //}
             return result;
         }
 

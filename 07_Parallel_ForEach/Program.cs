@@ -44,6 +44,9 @@ namespace _07_Parallel_ForEach
                 new Author("Roberto"),
                 new Author("William"),
                 new Author("Roberto"),
+                new Author("Roberto"),
+                new Author("William"),
+                new Author("Roberto"),
             };
 
             //Parallel.ForEach(authors, AverageRating);

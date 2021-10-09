@@ -33,6 +33,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "13_Task_Scheduler", "13_Tas
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "14_async_await", "14_async_await\14_async_await.csproj", "{2DC0D11F-20CD-4C91-BB35-3489F89C828D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "15_WPF_with_Task", "15_WPF_with_Task\15_WPF_with_Task.csproj", "{9032B35E-46D0-4915-AEED-E84B51A18C7C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -99,6 +101,10 @@ Global
 		{2DC0D11F-20CD-4C91-BB35-3489F89C828D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2DC0D11F-20CD-4C91-BB35-3489F89C828D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2DC0D11F-20CD-4C91-BB35-3489F89C828D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9032B35E-46D0-4915-AEED-E84B51A18C7C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9032B35E-46D0-4915-AEED-E84B51A18C7C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9032B35E-46D0-4915-AEED-E84B51A18C7C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9032B35E-46D0-4915-AEED-E84B51A18C7C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
