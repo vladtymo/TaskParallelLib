@@ -19,9 +19,9 @@ namespace _11_PLINQ
             //                 select Factorial(n);
 
             var factorials = numbers.AsParallel()
-                                    .AsOrdered()
-                                    .Where(n => n > 0);
-                                    //.Select(n => Factorial(n));
+                                    //.AsOrdered()
+                                    .Where(n => n > 0)
+                                    .Select(n => Factorial(n));
 
             //var query = from n in factorials.AsUnordered()
             //            where n > 100
@@ -44,19 +44,19 @@ namespace _11_PLINQ
         }
         static int Factorial(int x)
         {
-            //Random r = new Random();
-            //for (int i = 0; i < 10_000_000; i++)
-            //{
-            //    r.Next();
-            //    r.GetHashCode();
-            //    r.NextDouble();
-            //}
+            Random r = new Random();
+            for (int i = 0; i < 10_000_000; i++)
+            {
+                r.Next();
+                r.GetHashCode();
+                r.NextDouble();
+            }
             int result = 1;
 
-            //for (int i = 1; i <= x; i++)
-            //{
-            //    result *= i;
-            //}
+            for (int i = 1; i <= x; i++)
+            {
+                result *= i;
+            }
             return result;
         }
 

@@ -19,7 +19,7 @@ namespace _01_Task
         static void Main(string[] args)
         {
             Console.OutputEncoding = Encoding.UTF8;
-
+            
             Task task1 = new Task(() => Console.WriteLine($"Task 1 is executed in Thread: {Thread.CurrentThread.ManagedThreadId}"));
             task1.Start();
 
@@ -32,7 +32,7 @@ namespace _01_Task
 
             Task task = new Task(Display);
             task.Start();
-            task.Wait(); // waiting...
+            //task.Wait(); // waiting...
 
             Console.WriteLine("Завершення метода Main");
 
