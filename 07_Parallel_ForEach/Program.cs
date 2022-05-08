@@ -29,7 +29,7 @@ namespace _07_Parallel_ForEach
         }
         static void Main(string[] args)
         {
-            var list = new List<int>() { 1, 3, 5, 8 };
+            //var list = new List<int>() { 1, 3, 5, 8 };
 
             //Parallel.ForEach(list, Factorial);
 
@@ -43,10 +43,11 @@ namespace _07_Parallel_ForEach
                 new Author("Harry"),
                 new Author("Roberto"),
                 new Author("William"),
-                new Author("Roberto")
+                new Author("Roberto"),
+                new Author("William")
             };
 
-            //Parallel.ForEach(authors, AverageRating);
+            Parallel.ForEach(authors, AverageRating);
 
             //foreach (var a in authors)
             //{
@@ -59,7 +60,7 @@ namespace _07_Parallel_ForEach
             if (result.IsCompleted)
             {
                 Console.WriteLine("Duration: " + (DateTime.Now - start).TotalSeconds);
-                Console.WriteLine("All Tasks had completed!");
+                Console.WriteLine("All Tasks had comple ted!");
             }
 
             Console.ReadLine();

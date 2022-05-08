@@ -18,7 +18,7 @@ namespace _04_Task_Result
             task1.ContinueWith(Summ);
 
             task1.Start();
-
+            
             //task1.Wait();
             Console.WriteLine($"Фактоіал числа 5 = {task1.Result}");
 

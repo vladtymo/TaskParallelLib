@@ -19,7 +19,7 @@ namespace _11_PLINQ
             //                 select Factorial(n);
 
             var factorials = numbers.AsParallel()
-                                    //.AsOrdered()
+                                    .AsOrdered()
                                     .Where(n => n > 0)
                                     .Select(n => Factorial(n));
 
@@ -27,7 +27,7 @@ namespace _11_PLINQ
             //            where n > 100
             //            select n;
 
-            //var query = factorials.AsUnordered().Where(n => n > 100);
+            var query = factorials.AsUnordered().Where(n => n > 100);
 
             var watch = System.Diagnostics.Stopwatch.StartNew();
 
@@ -37,8 +37,8 @@ namespace _11_PLINQ
             watch.Stop();
             Console.WriteLine($"Execution Time: {watch.ElapsedMilliseconds} ms\n");
 
-            //foreach (var n in query)
-            //    Console.WriteLine("\t\t" + n);
+            foreach (var n in query)
+                Console.WriteLine("\t\t" + n);
 
             Console.Read();
         }

@@ -19,15 +19,13 @@ namespace _06_Paraller_For
             //{
             //    Factorial(i);
             //}
-
-            // itertions: [1...19]
-            Parallel.For(1, 20, Factorial);
-
-
             //for (int i = 1; i < 50; i++)
             //{
             //    Task.Run(() => Factorial(i));
             //}
+
+            // itertions: [1...19]
+            Parallel.For(1, 20, Factorial);
 
             Console.ReadLine();
         }
@@ -35,7 +33,7 @@ namespace _06_Paraller_For
         static void Factorial(int x)
         {
             Random r = new Random();
-            for (int i = 0; i < 10_000_000; i++)
+            for (int i = 0; i < 100_000_000; i++)
             {
                 r.Next();
                 r.GetHashCode();

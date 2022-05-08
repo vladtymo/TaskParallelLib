@@ -18,7 +18,7 @@ namespace _04_Continuous_Tasks
 
             // задача продолжения
             Task task2 = task1.ContinueWith(Display); //.ContinueWith(Display2);
-
+            
             task1.Start();
 
             // ждем окончания второй задачи
