@@ -19,14 +19,17 @@ namespace _01_Task
         static void Main(string[] args)
         {
             Console.OutputEncoding = Encoding.UTF8;
-            
+
             Task task1 = new Task(() => Console.WriteLine($"Task 1 is executed in Thread: {Thread.CurrentThread.ManagedThreadId}"));
             task1.Start();
 
             // start automatically
             Task task2 = Task.Factory.StartNew(() => Console.WriteLine($"Task 2 is executed in Thread: {Thread.CurrentThread.ManagedThreadId}"));
             // start automatically
-            Task task3 = Task.Run(() => Console.WriteLine($"Task 3 is executed in Thread: {Thread.CurrentThread.ManagedThreadId}"));
+            Task task3 = Task.Run(() =>
+            {
+                Console.WriteLine($"Task 3 is executed in Thread: {Thread.CurrentThread.ManagedThreadId}");
+            });
 
             Console.ReadLine();
 
