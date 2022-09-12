@@ -14,7 +14,7 @@ namespace _04_Task_Result
             Console.OutputEncoding = Encoding.UTF8;
 
             ////////////////// Factorial
-            Task<int> task1 = new Task<int>(() => Factorial(5));
+            Task<int> task1 = new Task<int>(() => Factorial(5)); // 5! = 1 * 2 * 3 * 4 * 5 = 120
             task1.ContinueWith(Summ);
 
             task1.Start();
@@ -60,7 +60,7 @@ namespace _04_Task_Result
         }
         static int Summ(Task<int> prevTask)
         {
-            int summ = prevTask.Result + prevTask.Result;
+            int summ = prevTask.Result * 2;
             Console.WriteLine(summ);
             return summ;
         }

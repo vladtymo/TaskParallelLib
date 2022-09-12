@@ -16,7 +16,7 @@ namespace _04_Continuous_Tasks
                 Thread.Sleep(1000);
             });
 
-            // задача продолжения
+            // автоматичний запуск завдання після завершення поточного
             Task task2 = task1.ContinueWith(Display); //.ContinueWith(Display2);
             
             task1.Start();

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace _08_Parallel_Break
@@ -28,7 +29,7 @@ namespace _08_Parallel_Break
         static void Factorial(int x, ParallelLoopState pls)
         {
             int result = 1;
-
+           
             for (int i = 1; i <= x; i++)
             {
                 result *= i;

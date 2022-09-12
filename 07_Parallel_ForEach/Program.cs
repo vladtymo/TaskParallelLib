@@ -47,21 +47,21 @@ namespace _07_Parallel_ForEach
                 new Author("William")
             };
 
-            Parallel.ForEach(authors, AverageRating);
+            //Parallel.ForEach(authors, AverageRating);
 
             //foreach (var a in authors)
             //{
             //    AverageRating(a);
             //}
 
-            DateTime start = DateTime.Now;
-            ParallelLoopResult result = Parallel.ForEach<Author>(authors, AverageRating);
+            //DateTime start = DateTime.Now;
+            //ParallelLoopResult result = Parallel.ForEach<Author>(authors, AverageRating);
 
-            if (result.IsCompleted)
-            {
-                Console.WriteLine("Duration: " + (DateTime.Now - start).TotalSeconds);
-                Console.WriteLine("All Tasks had comple ted!");
-            }
+            //if (result.IsCompleted)
+            //{
+            //    Console.WriteLine("Duration: " + (DateTime.Now - start).TotalSeconds);
+            //    Console.WriteLine("All Tasks had comple ted!");
+            //}
 
             Console.ReadLine();
         }

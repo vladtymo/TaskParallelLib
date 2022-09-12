@@ -19,9 +19,10 @@ namespace _06_Paraller_For
             //{
             //    Factorial(i);
             //}
-            //for (int i = 1; i < 50; i++)
+            //for (int i = 1; i < 20; i++)
             //{
-            //    Task.Run(() => Factorial(i));
+            //    int n = i;
+            //    Task.Run(() => Factorial(n));
             //}
 
             // itertions: [1...19]
