@@ -29,8 +29,7 @@ namespace _07_Parallel_ForEach
         }
         static void Main(string[] args)
         {
-            //var list = new List<int>() { 1, 3, 5, 8 };
-
+            //var list = new List<int>() { 1, 3, 5, 8 
             //Parallel.ForEach(list, Factorial);
 
             List<Author> authors = new List<Author>()
@@ -54,14 +53,14 @@ namespace _07_Parallel_ForEach
             //    AverageRating(a);
             //}
 
-            //DateTime start = DateTime.Now;
-            //ParallelLoopResult result = Parallel.ForEach<Author>(authors, AverageRating);
+            DateTime start = DateTime.Now;
+            ParallelLoopResult result = Parallel.ForEach(authors, AverageRating);
 
-            //if (result.IsCompleted)
-            //{
-            //    Console.WriteLine("Duration: " + (DateTime.Now - start).TotalSeconds);
-            //    Console.WriteLine("All Tasks had comple ted!");
-            //}
+            if (result.IsCompleted)
+            {
+                Console.WriteLine("Duration: " + (DateTime.Now - start).TotalSeconds);
+                Console.WriteLine("All Tasks had comple ted!");
+            }
 
             Console.ReadLine();
         }

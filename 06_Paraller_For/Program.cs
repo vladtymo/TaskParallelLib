@@ -19,6 +19,7 @@ namespace _06_Paraller_For
             //{
             //    Factorial(i);
             //}
+
             //for (int i = 1; i < 20; i++)
             //{
             //    int n = i;
