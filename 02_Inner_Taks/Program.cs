@@ -13,13 +13,17 @@ namespace _02_Inner_Taks
         {
             var outer = Task.Factory.StartNew(() =>      // outer task
             {
+                Console.WriteLine("Outer: " + Thread.CurrentThread.ManagedThreadId);
                 Console.WriteLine("Outer task starting...");
 
                 var inner = Task.Factory.StartNew(() =>  // inner task
                 {
+                    Console.WriteLine("Inner: " + Thread.CurrentThread.ManagedThreadId);
+
                     Console.WriteLine("Inner task starting...");
                     Thread.Sleep(2000);
                     Console.WriteLine("Inner task finished.");
+
                 }, TaskCreationOptions.AttachedToParent);
                 //inner.Wait();
                 Console.WriteLine("Outer task ending...");
