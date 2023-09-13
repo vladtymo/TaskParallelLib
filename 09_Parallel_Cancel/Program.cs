@@ -32,16 +32,18 @@ namespace _09_Parallel_Cancel
                     Console.WriteLine($"Факториал числа {i} равен {result}");
                     Thread.Sleep(2000);
                 }
-            });            
+
+            }, token);
+
             task1.Start();
 
-            Console.WriteLine("Введите Y для отмены операции или другой символ для ее продолжения:");
-            string s = Console.ReadLine();
-            if (s == "Y")
-                cancelTokenSource.Cancel();
+            Console.WriteLine("Press any key to stop the task:");
+            Console.ReadKey();
+            cancelTokenSource.Cancel();
 
-            Console.Read();
-        }       
+            Console.WriteLine("Press any key to stop the App");
+            Console.ReadKey();
+        }
     }
-    
+
 }

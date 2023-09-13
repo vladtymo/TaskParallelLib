@@ -16,12 +16,12 @@ namespace _04_Continuous_Tasks
                 Thread.Sleep(1000);
             });
 
-            // автоматичний запуск завдання після завершення поточного
-            Task task2 = task1.ContinueWith(Display); //.ContinueWith(Display2);
+            // автоматичний запуск завдання після завершення 1-го
+            Task task2 = task1.ContinueWith(Display).ContinueWith(Display2);
             
             task1.Start();
 
-            // ждем окончания второй задачи
+            // чекаємо завершення 2-го завдання
             task2.Wait();
             Console.WriteLine("Main is working...");
             Console.ReadLine();

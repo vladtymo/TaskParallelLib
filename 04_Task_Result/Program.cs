@@ -20,7 +20,7 @@ namespace _04_Task_Result
             task1.Start();
             
             //task1.Wait();
-            Console.WriteLine($"Фактоіал числа 5 = {task1.Result}");
+            Console.WriteLine($"Факторіал числа 5 = {task1.Result}"); // freeze
 
             ////////////////////// Book
             Task<Book> task2 = new Task<Book>(() =>
@@ -44,7 +44,8 @@ namespace _04_Task_Result
             Book b = task2.Result;  // ожидаем получение результата
             Console.WriteLine($"Назва книги: {b.Title}, автор: {b.Author}");
 
-            Console.ReadLine();
+            Console.WriteLine("Main continue working...");
+            Task.WaitAll(task1, task2);
         }
 
         static int Factorial(int x)
@@ -54,6 +55,7 @@ namespace _04_Task_Result
             for (int i = 1; i <= x; i++)
             {
                 result *= i;
+                Thread.Sleep(1000);
             }
 
             return result;
