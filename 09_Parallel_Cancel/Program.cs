@@ -24,12 +24,12 @@ namespace _09_Parallel_Cancel
                 {
                     if (token.IsCancellationRequested)
                     {
-                        Console.WriteLine("Операция прервана");
+                        Console.WriteLine("Task was canceled!");
                         return;
                     }
 
                     result *= i;
-                    Console.WriteLine($"Факториал числа {i} равен {result}");
+                    Console.WriteLine($"The factorial of {i} = {result}");
                     Thread.Sleep(2000);
                 }
 

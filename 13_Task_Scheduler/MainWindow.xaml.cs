@@ -28,6 +28,7 @@ namespace _13_Task_Scheduler
 
         private void MakeProgress()
         {
+            // invoke the code in the Current thread
             //Application.Current.Dispatcher.Invoke(() =>
             //{
                 if (progressBar.Value == progressBar.Maximum)

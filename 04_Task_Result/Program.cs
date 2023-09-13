@@ -20,7 +20,7 @@ namespace _04_Task_Result
             task1.Start();
             
             //task1.Wait();
-            Console.WriteLine($"Факторіал числа 5 = {task1.Result}"); // freeze
+            Console.WriteLine($"Факторіал числа 5 = {task1.Result}"); // wait until task complete
 
             ////////////////////// Book
             Task<Book> task2 = new Task<Book>(() =>
