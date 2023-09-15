@@ -44,15 +44,19 @@ namespace _07_Parallel_ForEach
                 new Author("William"),
                 new Author("Roberto"),
                 new Author("Harry"),
+                new Author("Roberto"),
+                new Author("William"),
+                new Author("Roberto"),
+                new Author("Harry"),
                 new Author("Roberto")
             };
-
-            //Parallel.ForEach(authors, AverageRating);
 
             //foreach (var a in authors)
             //{
             //    AverageRating(a);
             //}
+
+            //Parallel.ForEach(authors, AverageRating);
 
             DateTime start = DateTime.Now;
             ParallelLoopResult result = Parallel.ForEach(authors, AverageRating);

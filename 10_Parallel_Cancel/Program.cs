@@ -14,7 +14,7 @@ namespace _10_Parallel_Cancel
             Console.OutputEncoding = Encoding.UTF8;
 
             CancellationTokenSource cancelTokenSource = new CancellationTokenSource();
-            CancellationToken token = cancelTokenSource.Token;
+            //CancellationToken token = cancelTokenSource.Token;
 
             Task.Run(() =>
             {
@@ -31,7 +31,7 @@ namespace _10_Parallel_Cancel
                 //Parallel.ForEach<int>(new List<int>() { 1, 2, 3, 4, 5, 6, 7, 8 },
                 //                        new ParallelOptions { CancellationToken = token }, Factorial);
                 // или так
-                Parallel.For(1, 20, new ParallelOptions { CancellationToken = token }, Factorial);
+                Parallel.For(1, 20, new ParallelOptions { CancellationToken = cancelTokenSource.Token }, Factorial);
             }
             catch (OperationCanceledException ex)
             {

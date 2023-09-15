@@ -28,8 +28,7 @@ namespace _11_PLINQ
             //            where n > 100
             //            select n;
 
-            var rnd = new Random();
-            var query = factorials//.AsUnordered()
+            var query = factorials.AsUnordered()
                                   //.AsSequential()
                                   .Where(n => n > 100);
 
@@ -49,7 +48,7 @@ namespace _11_PLINQ
         static int Factorial(int x)
         {
             Random r = new Random();
-            for (int i = 0; i < 10_000_000; i++)
+            for (int i = 0; i < 50_000_000; i++)
             {
                 r.Next();
                 r.GetHashCode();
