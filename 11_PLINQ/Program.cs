@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace _11_PLINQ
@@ -27,11 +28,14 @@ namespace _11_PLINQ
             //            where n > 100
             //            select n;
 
-            //var query = factorials.AsUnordered().Where(n => n > 100);
+            var rnd = new Random();
+            var query = factorials//.AsUnordered()
+                                  //.AsSequential()
+                                  .Where(n => n > 100);
 
             var watch = System.Diagnostics.Stopwatch.StartNew();
 
-            foreach (var n in factorials)
+            foreach (var n in query) // execute query
                 Console.WriteLine(n);
 
             watch.Stop();
