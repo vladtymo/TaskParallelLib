@@ -36,7 +36,7 @@ namespace _01_Task
 
             Task task = new Task(Display);
             task.Start();
-            //task.Wait(); // waiting... (freez)
+            task.Wait(); // waiting... (freez)
 
             Console.WriteLine("Завершення метода Main");
 

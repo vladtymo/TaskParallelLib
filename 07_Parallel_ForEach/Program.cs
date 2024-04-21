@@ -46,9 +46,8 @@ namespace _07_Parallel_ForEach
                 new Author("Harry"),
                 new Author("Roberto"),
                 new Author("William"),
-                new Author("Roberto"),
-                new Author("Harry"),
-                new Author("Roberto")
+                new Author("William"),
+                new Author("William")
             };
 
             //foreach (var a in authors)
