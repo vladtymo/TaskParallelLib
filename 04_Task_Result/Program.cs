@@ -28,17 +28,6 @@ namespace _04_Task_Result
                 return new Book { Title = "Війна і мир", Author = "Л. Толстой" };
             });
 
-            //string separator = new string('-', 10);
-            //Task<Book> task2 = new Task<Book>(
-            //    delegate (object obj)
-            //    {
-            //        Book book = obj as Book;
-            //        book.Title = "Deal Souls";
-            //        book.Author = "Gogol";
-            //        return book;
-            //    },
-            //    new Book());
-
             task2.Start();
 
             Book b = task2.Result;  // ожидаем получение результата

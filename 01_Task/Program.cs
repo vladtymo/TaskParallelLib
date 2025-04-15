@@ -21,7 +21,11 @@ namespace _01_Task
         {
             Console.OutputEncoding = Encoding.UTF8;
            
-            Task task1 = new Task(() => Console.WriteLine($"Task 1 is executed in Thread: {Thread.CurrentThread.ManagedThreadId}"));
+            Task task1 = new Task(() =>
+            {
+                Thread.Sleep(1000);
+                Console.WriteLine($"Task 1 is executed in Thread: {Thread.CurrentThread.ManagedThreadId}");
+            });
             task1.Start();
 
             // start automatically
